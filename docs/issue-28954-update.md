@@ -1,8 +1,3 @@
-# Issue 28954 Update Packet
-
-Draft comment for `openai/codex#28954`:
-
-```md
 Follow-up after building and verifying a local workaround.
 
 I split the practical workaround out from the upstream capability-gating patch:
@@ -36,9 +31,15 @@ Verified local canary:
 - The command returned a current/public search result.
 - No ChatGPT auth or hosted OpenAI web-search tool was required.
 
+The reference adapter repo itself was also checked with:
+
+- `npm run check`
+- `npm run smoke`
+- `LOCAL_SEARCH_CLI_URL=http://127.0.0.1:8877 ./bin/codex-local-search health`
+- `LOCAL_SEARCH_CLI_URL=http://127.0.0.1:8878 ./bin/codex-local-search search --response-length short --max-output-tokens 800 sunflower conjecture arxiv`
+
 So this issue still looks like a real native hosted-tool capability/routing
 boundary for OSS/local providers. The reference adapter is not meant as the
 core upstream fix; it is a working local/free workaround and a concrete design
 point for anyone who wants local models to search while the upstream behavior is
 decided.
-```
