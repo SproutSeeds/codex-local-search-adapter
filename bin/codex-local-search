@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT="${BASH_SOURCE[0]}"
+while [ -L "$SCRIPT" ]; do
+  LINK="$(readlink "$SCRIPT")"
+  case "$LINK" in
+    /*) SCRIPT="$LINK" ;;
+    *) SCRIPT="$(dirname -- "$SCRIPT")/$LINK" ;;
+  esac
+done
+DIR="$(CDPATH= cd -- "$(dirname -- "$SCRIPT")/.." && pwd)"
+
+exec node "$DIR/src/local-search-cli.mjs" "$@"

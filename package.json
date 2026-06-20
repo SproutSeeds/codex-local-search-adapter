@@ -1,0 +1,24 @@
+{
+  "name": "codex-local-search-adapter",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Free local web-search adapter for Codex OSS/local-provider runs.",
+  "type": "module",
+  "bin": {
+    "codex-local-search": "./bin/codex-local-search"
+  },
+  "scripts": {
+    "check": "node --check src/local-searchd.mjs && node --check src/local-search-cli.mjs && node --check src/local-search-mcp.mjs",
+    "smoke": "node src/local-searchd.mjs --smoke && node src/local-search-cli.mjs --smoke && node src/local-search-mcp.mjs --smoke",
+    "searchd": "node src/local-searchd.mjs",
+    "mcp": "node src/local-search-mcp.mjs"
+  },
+  "keywords": [
+    "codex",
+    "ollama",
+    "mcp",
+    "web-search",
+    "local-models"
+  ],
+  "license": "MIT"
+}
