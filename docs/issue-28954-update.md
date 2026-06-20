@@ -1,13 +1,13 @@
 Follow-up after building and verifying a local workaround.
 
-I split the practical workaround out from the upstream capability-gating patch:
+I published the working local/free search adapter here:
 
-- Upstream capability-gating patch branch:
-  https://github.com/SproutSeeds/codex/tree/cody/oss-web-search-28954
-- Upstream compare:
-  https://github.com/openai/codex/compare/main...SproutSeeds:codex:cody/oss-web-search-28954
-- Local/free search reference adapter:
-  https://github.com/SproutSeeds/codex-local-search-adapter
+https://github.com/SproutSeeds/codex-local-search-adapter
+
+This is separate from the conservative upstream capability-gating patch:
+
+- Branch: https://github.com/SproutSeeds/codex/tree/cody/oss-web-search-28954
+- Compare: https://github.com/openai/codex/compare/main...SproutSeeds:codex:cody/oss-web-search-28954
 
 Current read after testing:
 
